@@ -4,13 +4,7 @@ const { createTodo, updateTodo } = require("./vTypes");
 const { todo } = require("./Mango");
 const cors = require("cors");
 app.use(express.json());
-app.use(cors(
-    {
-        origin: ["https://simple-todo-backend.vercel.app","http://localhost:5173"],
-        methods : ["POST","GET","PUT"],
-        credentials : true
-    }
-));
+app.use(cors());
 require('dotenv').config();
 app.get("/", (req, res) => {
   res.json({
